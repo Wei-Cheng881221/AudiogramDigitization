@@ -1,0 +1,11 @@
+name: Audio
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - cudatoolkit
+  - cudnn
+  - pip
+  - pip:
+      - pip-tools
+      
