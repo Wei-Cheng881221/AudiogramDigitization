@@ -36,20 +36,16 @@ if __name__ == "__main__":
     with tqdm(total=len(input_files)) as pbar:
         for input_file in input_files:
             pbar.set_description(f"{os.path.basename(input_file)}")
-            #set_description set the sentence infront of the tqdm
+
             result = None
 
             if args.annotation_mode:
-                #with annotation, there is more info
-                #such as bounding box and axes label
                 result = generate_partial_annotation(input_file, gpu=args.gpu)
             else:
-                #default goes here
                 result = extract_thresholds(input_file, gpu=args.gpu)
 
             result_as_string = json.dumps(result, indent=4, separators=(',', ': '))
-            #indent higher to read easier
-            #seperator to leave no space after ',' but ': '
+
             if args.output_dir:
                 predictions_filename = os.path.basename(input_file).split(".")[0] + ".json"
                 with open(os.path.join(args.output_dir, predictions_filename), "w") as ofile:
