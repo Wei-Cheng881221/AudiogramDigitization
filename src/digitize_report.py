@@ -48,6 +48,8 @@ if __name__ == "__main__":
 
             if args.output_dir:
                 predictions_filename = os.path.basename(input_file).split(".")[0] + ".json"
+                if not os.path.isdir(args.output_dir):
+                    os.mkdir(args.output_dir)
                 with open(os.path.join(args.output_dir, predictions_filename), "w") as ofile:
                     ofile.write(result_as_string)
             else:
