@@ -36,10 +36,13 @@ packaging==22.0
     #   pytesseract
 pandas==1.5.2
     # via -r requirements.in
+pdf2image==1.16.2
+    # via -r requirements.in
 pillow==9.4.0
     # via
     #   -r requirements.in
     #   matplotlib
+    #   pdf2image
     #   pytesseract
     #   torchvision
 pyparsing==3.0.9

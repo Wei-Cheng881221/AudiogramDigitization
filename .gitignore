@@ -10,6 +10,9 @@
 **/slurm*
 **/database
 **/release/build
+**/PTA_finish
+**/PTA_finish_t
+**/PTA_try
 
 # Junk files
 .DS_Store
