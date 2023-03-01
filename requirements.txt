@@ -6,9 +6,9 @@
 #
 certifi==2022.12.7
     # via requests
-charset-normalizer==2.1.1
+charset-normalizer==3.0.1
     # via requests
-contourpy==1.0.6
+contourpy==1.0.7
     # via matplotlib
 cycler==0.11.0
     # via matplotlib
@@ -16,11 +16,13 @@ fonttools==4.38.0
     # via matplotlib
 idna==3.4
     # via requests
+importlib-resources==5.12.0
+    # via matplotlib
 kiwisolver==1.4.4
     # via matplotlib
-matplotlib==3.6.2
+matplotlib==3.7.0
     # via -r requirements.in
-numpy==1.24.1
+numpy==1.24.2
     # via
     #   contourpy
     #   matplotlib
@@ -28,13 +30,23 @@ numpy==1.24.1
     #   pandas
     #   scipy
     #   torchvision
+nvidia-cublas-cu11==11.10.3.66
+    # via
+    #   nvidia-cudnn-cu11
+    #   torch
+nvidia-cuda-nvrtc-cu11==11.7.99
+    # via torch
+nvidia-cuda-runtime-cu11==11.7.99
+    # via torch
+nvidia-cudnn-cu11==8.5.0.96
+    # via torch
 opencv-python==4.7.0.68
     # via -r requirements.in
-packaging==22.0
+packaging==23.0
     # via
     #   matplotlib
     #   pytesseract
-pandas==1.5.2
+pandas==1.5.3
     # via -r requirements.in
 pdf2image==1.16.2
     # via -r requirements.in
@@ -53,31 +65,46 @@ python-dateutil==2.8.2
     # via
     #   matplotlib
     #   pandas
-pytz==2022.7
+pytz==2022.7.1
     # via pandas
 pyyaml==6.0
     # via -r requirements.in
-requests==2.28.1
-    # via -r requirements.in
-scipy==1.10.0
+requests==2.28.2
+    # via
+    #   -r requirements.in
+    #   torchvision
+scipy==1.10.1
     # via -r requirements.in
 six==1.16.0
     # via python-dateutil
 toml==0.10.2
     # via -r requirements.in
-torch==1.9.0
+torch==1.13.1
     # via
     #   -r requirements.in
+    #   torchaudio
     #   torchvision
-torchvision==0.10.0
+torchaudio==0.13.1
+    # via -r requirements.in
+torchvision==0.14.1
     # via -r requirements.in
 tqdm==4.64.1
     # via -r requirements.in
 typed-ast==1.5.4
     # via -r requirements.in
-typing-extensions==4.4.0
+typing-extensions==4.5.0
     # via
     #   -r requirements.in
     #   torch
-urllib3==1.26.13
+    #   torchvision
+urllib3==1.26.14
     # via requests
+wheel==0.38.4
+    # via
+    #   nvidia-cublas-cu11
+    #   nvidia-cuda-runtime-cu11
+zipp==3.14.0
+    # via importlib-resources
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools

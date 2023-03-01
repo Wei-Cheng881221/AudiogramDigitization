@@ -157,7 +157,8 @@ def detect_components(filepath: str, gpu: bool = False) -> List:
 
     # Detect audiograms within the report
     audiogram_model_weights_path = os.path.join(DIR, "..", "models/audiograms/latest/weights/best.pt")
-    audiograms = detect_audiograms(f"{filepath}", audiogram_model_weights_path)
+    audiograms = detect_audiograms(f"{filepath}", audiogram_model_weights_path, device = '0' if gpu else 'cpu')
+    #gpu fix in 2023/2/21
 
     # If no audiogram is detected, return...
     if len(audiograms) == 0:

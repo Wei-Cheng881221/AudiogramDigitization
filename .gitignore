@@ -12,7 +12,12 @@
 **/release/build
 **/PTA_finish
 **/PTA_finish_t
+**/PTA_finish_t_jpg
 **/PTA_try
+**/PTA_finish_try_fitz_jpg
+
+# test file
+test.py
 
 # Junk files
 .DS_Store

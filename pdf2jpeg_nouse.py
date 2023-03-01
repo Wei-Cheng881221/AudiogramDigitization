@@ -11,6 +11,8 @@ if __name__ == "__main__":
             help=("Path to the audiology report (or directory) to be transform."))
     parser.add_argument("-o", "--output_dir", type=str, required=True,
             help="Path to the directory in which the result is to be saved.")
+    parser.add_argument("-t", "--file_type", type=str, required=True,
+            help="Type for the output file. Input : bmp, jpg, png")
     args = parser.parse_args()
 
     if not os.path.isdir(args.output_dir):
@@ -35,6 +37,14 @@ if __name__ == "__main__":
 
                 # Save pages as images in the pdf
                 # images[i].save('page'+ str(i) +'.jpg', 'JPEG')
-                images[i].save(args.output_dir + '/' + name + '_page'+ str(i) +'.bmp', 'BMP')
+                if args.file_type == 'bmp':
+                    images[i].save(args.output_dir + '/' + name + '_page'+ str(i) +'.bmp', 'BMP')
+                elif args.file_type == 'jpg':
+                    images[i].save(args.output_dir + '/' + name + '_page'+ str(i) +'.jpg', 'JPEG')
+                elif args.file_type == 'png':
+                    images[i].save(args.output_dir + '/' + name + '_page'+ str(i) +'.png', 'PNG')
+                else:
+                    raise ValueError('No file type or not supported type!')
+                
 
             pbar.update(1)

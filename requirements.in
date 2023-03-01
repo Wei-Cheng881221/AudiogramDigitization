@@ -7,8 +7,9 @@ PyYAML
 requests
 scipy
 toml
-torch==1.9.0
-torchvision==0.10.0
+torch
+torchvision
+torchaudio
 tqdm
 typed-ast
 typing-extensions
