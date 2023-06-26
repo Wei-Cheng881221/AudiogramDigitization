@@ -203,9 +203,9 @@ def detect_components(filepath: str, gpu: bool = False) -> List:
         components[i]["audiogram"] = audiogram
 
         labels_model_weights_path = os.path.join(DIR, "..", "models/labels/latest/weights/best.pt")
-        components[i]["labels"] = detect_labels(cropped_file.name, labels_model_weights_path, audiogram_coordinates, correction_angle)
+        components[i]["labels"] = detect_labels(cropped_file.name, labels_model_weights_path, audiogram_coordinates, correction_angle, device = '0' if gpu else 'cpu')
         symbols_model_weights_path = os.path.join(DIR, "..", "models/symbols/latest/weights/best.pt")
-        components[i]["symbols"] = detect_symbols(cropped_file.name, symbols_model_weights_path, audiogram_coordinates, correction_angle)
+        components[i]["symbols"] = detect_symbols(cropped_file.name, symbols_model_weights_path, audiogram_coordinates, correction_angle, device = '0' if gpu else 'cpu')
 
     return components
 

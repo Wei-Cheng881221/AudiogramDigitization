@@ -34,7 +34,7 @@ if __name__ == "__main__":
                 page = pdf[pg]
                 trans = fitz.Matrix(1.5, 1.5) #調整到跟原始大小相近一點
                 pm = page.get_pixmap(matrix=trans)
-                pm.save(args.output_dir + '/' + name + "_page"+str(pg+1)+".jpg")
+                pm.save(args.output_dir + '/' + name + "_page"+str(pg+1)+".png") #this can only generate png
             pdf.close()
 
             pbar.update(1)
